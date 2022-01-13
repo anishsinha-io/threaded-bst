@@ -1,0 +1,2 @@
+add_library(threadedtree src/linkedlist/linkedlist.c include/linkedlist/linkedlist.h src/threadedtree/threadedtree.c include/threadedtree/threadedtree.h)
+target_include_directories(threadedtree PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
