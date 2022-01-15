@@ -11,5 +11,6 @@ TNode *sorted_list_to_bst(List *);
 TNode *leftmost_node(TNode *);
 void convert(TNode *);
 void print_threaded_tree(TNode *);
+void insert(TNode *, double);
 
 #endif //THREADEDBINARYSEARCHTREE_BST_H

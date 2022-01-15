@@ -86,3 +86,26 @@ void print_threaded_tree(TNode *root) {
     }
     printf("\n");
 }
+
+void insert(TNode *r, double val) {
+    TNode *p, *prev = NULL, *new_node;
+    new_node = new_tnode(val);
+    if (r == NULL) return;
+    p = r;
+    while (p != NULL) {
+        prev = p;
+        if (p->val > val) p = p->left;
+        else if (p->right_thread == false) p = p->right;
+        else break;
+    }
+    if (prev->val > val) {
+        prev->left = new_node;
+        new_node->right_thread = true;
+        new_node->right = prev;
+    } else if (prev->right_thread == true) {
+        new_node->right_thread = true;
+        prev->right_thread = false;
+        new_node->right = prev->right;
+        prev->right = new_node;
+    } else prev->right = new_node;
+}
